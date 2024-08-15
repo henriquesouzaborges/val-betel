@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="#page-top"><img src="assets/img/logo1.png" alt="image" height="120" width="120"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">Quem Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#pastores">Os Pastores </a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#NossasRedes">Ministério</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#cronogramaSemanal">Cronograma Semanal</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#comunicados">Comunicados</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#signup">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="signup-section" id="signup">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+          <h2 class="text-white mb-5">Login/Registro</h2>
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- * * SB Forms Contact Form * *-->
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- This form is pre-integrated with SB Forms.-->
+          <!-- To make this form functional, sign up at-->
+          <!-- https://startbootstrap.com/solution/contact-forms-->
+          <!-- to get an API token!-->
+
+          <form action="enviar.php" method="POST" onsubmit="return validateEmail()">
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu email" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="Digite sua senha" required pattern=".{6,}" title="A senha deve ter no mínimo 6 caracteres.">
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+            <p class="text-white">Não possui uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function validateEmail() {
+      const email = document.getElementById('email').value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Por favor,insira um email válido')
+        return false
+      }
+      return true
+    }
+  </script>
+
+</body>
+
+</html>

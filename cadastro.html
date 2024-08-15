@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet" />
+  <title>Cadastro</title>
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="#page-top"><img src="assets/img/logo1.png" alt="image" height="120" width="120"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">Quem Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#pastores">Os Pastores </a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#NossasRedes">Ministério</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#cronogramaSemanal">Cronograma Semanal</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#comunicados">Comunicados</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#signup">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="signup-section" id="signup">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+          <h2 class="text-white mb-5">Registro</h2>
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- * * SB Forms Contact Form * *-->
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- This form is pre-integrated with SB Forms.-->
+          <!-- To make this form functional, sign up at-->
+          <!-- https://startbootstrap.com/solution/contact-forms-->
+          <!-- to get an API token!-->
+
+          <form action="enviar.php" method="POST" onsubmit="return validateForm()">
+            <div class="mb-3">
+              <input type="text" name="text" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu nome completo" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite uma senha" required pattern=".{6,}" title="A senha deve ter no mínimo 6 caracteres">
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a senha" required pattern=".{6,}" title="A senha deve ter no mínimo 6 caracteres.">
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+            <p class="text-white">Já possui uma conta? <a href="login.html">Entre</a></p>
+          </form>
+          <script>
+            function validateForm() {
+              const email = document.getElementById('email').value;
+              const senha = document.getElementById('senha').value;
+              const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+              const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailPattern.test(email)) {
+                alert('Por favor, insira um email válido');
+                return false;
+              }
+              if (senha.lenght < 6) {
+                alert('A senha deve ter no mínimo 6 caracteres')
+                return false;
+              }
+
+              if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem');
+                return false;
+              }
+
+              return true;
+
+            }
+          </script>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
